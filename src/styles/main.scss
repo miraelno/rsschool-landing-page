@@ -1,0 +1,10 @@
+@use 'themes/tokens';
+@use 'themes/light';
+@use 'themes/dark';
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
