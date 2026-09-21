@@ -6,10 +6,11 @@
   align-items: center;
   gap: 2.5rem;
 
-  @include breakpoints.tablet-up {
+  @include breakpoints.desktop-up {
     flex-direction: row;
     gap: var(--section-gap);
   }
+
 }
 
 .mobile-app__offer {
