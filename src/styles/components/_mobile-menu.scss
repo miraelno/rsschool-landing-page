@@ -1,0 +1,55 @@
+@use '../tokens/breakpoints';
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: safe center;
+  gap: 3.75rem;
+  padding: 10rem 1rem 3.75rem;
+  overflow-y: auto;
+  background: var(--bg-page);
+  text-align: center;
+
+  @include breakpoints.tablet-up {
+    gap: 6.25rem;
+    padding-inline: 2.5rem;
+  }
+}
+
+.header--menu-open .mobile-menu {
+  display: flex;
+
+  @include breakpoints.desktop-up {
+    display: none;
+  }
+}
+
+.mobile-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  @include breakpoints.tablet-up {
+    gap: 3.75rem;
+  }
+}
+
+.mobile-menu__link {
+  font-size: 1.5rem;
+  line-height: var(--line-height-heading);
+
+  @include breakpoints.tablet-up {
+    font-size: var(--font-size-burger-link);
+  }
+}
+
+.mobile-menu__link--menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}

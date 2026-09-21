@@ -1,0 +1,84 @@
+@use '../tokens/breakpoints';
+
+.mobile-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+
+  @include breakpoints.desktop-up {
+    flex-direction: row;
+    gap: var(--section-gap);
+  }
+
+}
+
+.mobile-app__offer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2.5rem;
+  min-width: 0;
+}
+
+.mobile-app__text {
+  margin: 0;
+}
+
+.mobile-app__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.mobile-app__image {
+  width: 100%;
+  max-width: 39.375rem;
+  height: auto;
+  min-width: 0;
+  aspect-ratio: 1;
+  object-fit: cover;
+
+  @include breakpoints.tablet-up {
+    flex: 0 1 39.375rem;
+  }
+}
+
+.store-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 12.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--border-inverse);
+  border-radius: 100px;
+  color: var(--text-primary);
+
+  &:hover {
+    border-color: var(--text-accent);
+  }
+}
+
+.store-button__icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.store-button__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.store-button__label {
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+}
+
+.store-button__name {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}

@@ -1,0 +1,46 @@
+@use '../tokens/breakpoints';
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.about__images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @include breakpoints.tablet-up {
+    flex-direction: row;
+    gap: 2.5rem;
+  }
+}
+
+.about__column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+
+  @include breakpoints.tablet-up {
+    gap: 2.5rem;
+  }
+}
+
+.about__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.25rem;
+  object-fit: cover;
+}
+
+.about__image--tall {
+  aspect-ratio: 660 / 590;
+}
+
+.about__image--short {
+  aspect-ratio: 660 / 430;
+}

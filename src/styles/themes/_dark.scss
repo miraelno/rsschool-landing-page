@@ -1,0 +1,14 @@
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --text-primary: var(--color-cream);
+  --text-inverse: var(--color-cream);
+  --text-accent: var(--color-latte);
+
+  --bg-page: var(--color-espresso);
+  --bg-container: var(--color-charcoal);
+  --bg-overlay: var(--color-espresso-80);
+
+  --border-primary: var(--color-taupe);
+  --border-inverse: var(--color-taupe-light);
+}

@@ -1,0 +1,15 @@
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+
+  --text-primary: var(--color-charcoal);
+  --text-inverse: var(--color-cream);
+  --text-accent: var(--color-latte);
+
+  --bg-page: var(--color-cream);
+  --bg-container: var(--color-taupe);
+  --bg-overlay: var(--color-charcoal-80);
+
+  --border-primary: var(--color-taupe-light);
+  --border-inverse: var(--color-taupe);
+}

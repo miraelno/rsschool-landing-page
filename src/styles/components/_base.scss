@@ -1,0 +1,116 @@
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--line-height-heading);
+}
+
+h1 {
+    font-size: clamp(2.625rem, 7.63vw + 0.84rem, var(--font-size-h1));
+    line-height: var(--line-height-heading-h1);
+}
+
+h2{
+    font-size: clamp(2rem, 7.12vw + 0.33rem, var(--font-size-h2))
+}
+
+h3{
+    font-size: var(--font-size-h3);
+}
+
+.accent{
+    font-style: var(--font-style-accent);
+    color: var(--text-accent);
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: var(--font-size-link);
+    font-weight: var(--font-weight-semi-bold);
+    transition: all .15s ease-in 0s;
+    &:hover{
+        color: var(--text-accent);
+    }
+}
+
+ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+button{
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.button{
+    display: inline-block;
+    align-items: center;
+    padding: 1.25rem 4.875rem;
+    background-color: var(--bg-page);
+    border-radius: 100px;
+    color: var(--text-primary);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+}
+
+.button--primary{
+    position: relative;
+    &:hover{
+        color: var(--text-primary);
+        .button__icon{
+            opacity: 1;
+        }
+    }
+}
+
+
+.button__icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    right: 50px;
+}
+
+.button-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 3.75rem;
+    height: 3.75rem;
+    border: 1px solid var(--border-inverse);
+    border-radius: 100px;
+    color: var(--text-primary);
+
+    &:hover{
+        color: var(--text-accent);
+        border-color: var(--text-accent);
+    }
+}
+
+.button-icon--light{
+    border-color: var(--border-primary);
+    color: var(--text-inverse);
+}
+
+.button--secondary{
+    padding: calc(0.625rem - 1px) 1.25rem;
+    border: 1px solid var(--border-inverse);
+    background-color: transparent;
+    font-weight: var(--font-weight-semi-bold);
+    transition: border-color .15s ease-in, color .15s ease-in;
+
+    &:hover{
+        border-color: var(--text-accent);
+        color: var(--text-accent);
+    }
+}

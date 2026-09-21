@@ -1,0 +1,27 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-body);
+  background: var(--bg-page);
+  color: var(--text-primary);
+}
+
+body:has(.header--menu-open) {
+  overflow: hidden;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  flex: 1;
+  margin-block-end: var(--section-gap);
+}

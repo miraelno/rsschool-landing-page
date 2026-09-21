@@ -1,0 +1,67 @@
+@use '../tokens/breakpoints';
+
+.contacts {
+  padding-block-end: 2.5rem;
+}
+
+.contacts__card {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: clamp(1.5rem, 12vw - 1.5rem, 6.25rem);
+  border-radius: 2.5rem;
+  background: var(--bg-container);
+  color: var(--text-inverse);
+
+  @include breakpoints.tablet-up {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--section-gap);
+  }
+}
+
+.contacts__offer,
+.contacts__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2.5rem;
+  justify-content: center;
+  min-width: 0;
+}
+
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.contacts__address {
+  font-style: normal;
+}
+
+.contacts__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contacts__item {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding-block-end: 0.25rem;
+  border-bottom: 1px solid transparent;
+  color: var(--text-inverse);
+  font-weight: var(--font-weight-semi-bold);
+  transition: border-color 0.2s ease;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+a.contacts__item:hover {
+  border-bottom-color: var(--text-inverse);
+  color: var(--text-inverse);
+}
