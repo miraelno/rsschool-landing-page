@@ -1,3 +1,5 @@
+@use '../tokens/breakpoints';
+
 .header {
   position: sticky;
   top: 0;
@@ -27,9 +29,13 @@
 }
 
 .nav__list {
-  display: flex;
+  display: none;
   gap: 1.5rem;
   margin-inline-start: auto;
+
+  @include breakpoints.desktop-up {
+    display: flex;
+  }
 }
 
 
@@ -41,7 +47,7 @@
 
 
 .actions__menu{
-  display: flex;
+  display: none;
   align-items: center;
   gap: 0.5rem;
   border-bottom: 1px solid transparent;
@@ -50,31 +56,89 @@
   &:hover{
     border-bottom-color: var(--text-primary);
   }
-}
 
-.actions__theme-toggle{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-  &:hover{
-    .theme-toggle__night-border{
-      fill: var(--border-inverse);
-    }
-
-    .theme-toggle__night-icon{
-    fill: var(--text-inverse);
-}
+  @include breakpoints.desktop-up {
+    display: flex;
   }
 }
 
-.theme-toggle__night-border {
-  fill: none;
+// Переключатель темы: 104x52 на планшете/мобайле, 88x44 на десктопе.
+// Рамка = border 1px + padding 3px, чтобы внутренний отступ был 4px как в макете.
+.actions__theme-toggle{
+  --toggle-slot: 2.75rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: calc(0.25rem - 1px);
+  border: 1px solid var(--border-primary);
+  border-radius: 100px;
+  cursor: pointer;
+
+  @include breakpoints.desktop-up {
+    --toggle-slot: 2.25rem;
+  }
 }
 
+.theme-toggle__option{
+  display: grid;
+  place-items: center;
+  width: var(--toggle-slot);
+  height: var(--toggle-slot);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-primary);
+  transition: background-color 0.15s ease-in, color 0.15s ease-in;
+}
+
+// hover: подсвечивается неактивная сторона
+.actions__theme-toggle:hover .theme-toggle__option{
+  background: var(--bg-container);
+  color: var(--text-inverse);
+}
+
+// активная сторона: в светлой теме — солнце, в тёмной — луна
+// (должно идти после hover-правила: у них одинаковая специфичность)
+:root:not([data-theme='dark']) .theme-toggle__option--light,
+:root[data-theme='dark'] .theme-toggle__option--dark{
+  background: var(--text-accent);
+  color: var(--text-inverse);
+}
+
+.actions__burger{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--border-inverse);
+  border-radius: 100px;
+  color: var(--text-primary);
+
+  &:hover{
+    color: var(--text-accent);
+    border-color: var(--text-accent);
+  }
+
+  @include breakpoints.desktop-up {
+    display: none;
+  }
+}
+
+.actions__burger-close{
+  display: none;
+}
+
+.actions__burger[aria-expanded='true']{
+  .actions__burger-open{
+    display: none;
+  }
+
+  .actions__burger-close{
+    display: block;
+  }
+}
 
 .link__icon{
   stroke: var(--text-primary);

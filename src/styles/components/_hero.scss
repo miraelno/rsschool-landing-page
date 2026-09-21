@@ -1,11 +1,13 @@
 .hero{
-  min-height: 40rem;
-  padding: 6rem;
-  border-radius: 2.5rem;
-  background-image: url('../../assets/images/hero/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  color: var(--text-inverse)
+    display: flex;
+    align-items: center;
+    min-height: 40rem;
+    padding: clamp(1rem, 20.36vw - 3.77rem ,6rem);
+    border-radius: 2.5rem;
+    background-image: url('../../assets/images/hero/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--text-inverse)
 }
 
 
@@ -14,5 +16,5 @@
     flex-direction: column;
     gap: 1.25rem;
     align-items: flex-start;
-    width: clamp(33.75rem, 40%, 10%);
+    width: min(33.75rem, 100%);
 }

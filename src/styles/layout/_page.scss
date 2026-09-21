@@ -15,6 +15,15 @@ body {
   color: var(--text-primary);
 }
 
+// пока открыто мобильное меню, страница под ним не скроллится
+body:has(.header--menu-open) {
+  overflow: hidden;
+}
+
 .main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
   flex: 1;
+  margin-block-end: var(--section-gap);
 }
