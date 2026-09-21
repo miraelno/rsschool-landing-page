@@ -1,5 +1,5 @@
 $breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px; // TODO: уточнить по макету, с какой ширины показывается desktop-версия хедера
+$breakpoint-desktop: 1024px;
 
 @mixin tablet-up {
   @media (min-width: $breakpoint-tablet) {

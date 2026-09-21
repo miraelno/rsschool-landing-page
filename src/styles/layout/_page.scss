@@ -1,6 +1,5 @@
 html {
   scroll-behavior: smooth;
-  // scroll-padding-top: calc(var(--header-height) + 8px);
 }
 
 body {
@@ -15,7 +14,6 @@ body {
   color: var(--text-primary);
 }
 
-// пока открыто мобильное меню, страница под ним не скроллится
 body:has(.header--menu-open) {
   overflow: hidden;
 }

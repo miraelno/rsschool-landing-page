@@ -62,8 +62,10 @@
   }
 }
 
-// Переключатель темы: 104x52 на планшете/мобайле, 88x44 на десктопе.
-// Рамка = border 1px + padding 3px, чтобы внутренний отступ был 4px как в макете.
+.actions__menu--active{
+  border-bottom-color: var(--text-primary);
+}
+
 .actions__theme-toggle{
   --toggle-slot: 2.75rem;
 
@@ -91,14 +93,11 @@
   transition: background-color 0.15s ease-in, color 0.15s ease-in;
 }
 
-// hover: подсвечивается неактивная сторона
 .actions__theme-toggle:hover .theme-toggle__option{
   background: var(--bg-container);
   color: var(--text-inverse);
 }
 
-// активная сторона: в светлой теме — солнце, в тёмной — луна
-// (должно идти после hover-правила: у них одинаковая специфичность)
 :root:not([data-theme='dark']) .theme-toggle__option--light,
 :root[data-theme='dark'] .theme-toggle__option--dark{
   background: var(--text-accent);

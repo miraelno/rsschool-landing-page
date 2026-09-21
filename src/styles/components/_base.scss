@@ -101,3 +101,16 @@ button{
     border-color: var(--border-primary);
     color: var(--text-inverse);
 }
+
+.button--secondary{
+    padding: calc(0.625rem - 1px) 1.25rem;
+    border: 1px solid var(--border-inverse);
+    background-color: transparent;
+    font-weight: var(--font-weight-semi-bold);
+    transition: border-color .15s ease-in, color .15s ease-in;
+
+    &:hover{
+        border-color: var(--text-accent);
+        color: var(--text-accent);
+    }
+}
