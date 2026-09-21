@@ -1,10 +1,16 @@
-@use 'themes/tokens';
+@use 'tokens/colors';
+@use 'tokens/size';
+@use 'tokens/typography';
+
+
 @use 'themes/light';
 @use 'themes/dark';
 
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background: var(--color-bg);
-  color: var(--color-text);
-}
+@use 'layout/page';
+@use 'layout/container';
+@use 'layout/header';
+@use 'layout/footer';
+
+@use 'components/base';
+@use 'components/theme-toggle';
+@use 'components/hero';

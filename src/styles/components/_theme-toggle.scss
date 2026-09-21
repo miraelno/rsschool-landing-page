@@ -1,0 +1,14 @@
+.theme-toggle {
+  padding: 0.4rem 0.6rem;
+  font-size: 1.1rem;
+  line-height: 1;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--text-accent);
+  }
+}

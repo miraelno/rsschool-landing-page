@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var system = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.dataset.theme = saved || system;
+            } catch (e) {}
+        })();
+    </script>
+    <script type="module" src="./scripts/main.js"></script>
+    <title>About</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__inner">
+            <a class="logo" href="./index.html">Logo</a>
+            <nav class="nav">
+                <a href="./index.html">Home</a>
+                <a href="./about.html" aria-current="page">About</a>
+            </nav>
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme"
+                aria-pressed="false">🌓</button>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="container">
+            <h1>About</h1>
+            <p>About page content.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">© 2026</div>
+    </footer>
+</body>
+
+</html>

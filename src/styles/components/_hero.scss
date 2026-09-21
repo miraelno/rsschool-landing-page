@@ -1,0 +1,18 @@
+.hero{
+  min-height: 40rem;
+  padding: 6rem;
+  border-radius: 2.5rem;
+  background-image: url('../../assets/images/hero/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: var(--text-inverse)
+}
+
+
+.hero__inner{
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: flex-start;
+    width: clamp(33.75rem, 40%, 10%);
+}
