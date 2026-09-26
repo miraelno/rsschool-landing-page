@@ -5,3 +5,4 @@ import '@fontsource/inter/600-italic.css';
 import '../styles/main.scss'
 import './theme.js'
 import './menu.js'
+import './menu-render.js'
