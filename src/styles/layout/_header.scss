@@ -33,7 +33,7 @@
   gap: 1.5rem;
   margin-inline-start: auto;
 
-  @include breakpoints.desktop-up {
+  @include breakpoints.tablet-up {
     display: flex;
   }
 }
@@ -57,7 +57,7 @@
     border-bottom-color: var(--text-primary);
   }
 
-  @include breakpoints.desktop-up {
+  @include breakpoints.tablet_up {
     display: flex;
   }
 }
@@ -76,10 +76,6 @@
   border: 1px solid var(--border-primary);
   border-radius: 100px;
   cursor: pointer;
-
-  @include breakpoints.desktop-up {
-    --toggle-slot: 2.25rem;
-  }
 }
 
 .theme-toggle__option{
@@ -120,7 +116,7 @@
     border-color: var(--text-accent);
   }
 
-  @include breakpoints.desktop-up {
+  @include breakpoints.tablet-up {
     display: none;
   }
 }
