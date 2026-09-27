@@ -1,5 +1,11 @@
-import products from './data/products.json'
+import productsData from './data/products.json'
 import { renderModal } from './modal-render';
+
+const menuImages = import.meta.glob('../assets/images/menu/*.png', { eager: true, import: 'default' });
+
+const products = productsData.map((product) => {
+    return { ...product, image: menuImages[product.image.replace('./', '../')] }
+})
 
 let activeTab = document.querySelector('.tab--active');
 const allTabs = document.querySelectorAll('.menu__tabs .tab');
