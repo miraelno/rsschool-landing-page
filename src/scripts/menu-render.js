@@ -1,10 +1,11 @@
 import products from './data/products.json'
-import { showModal } from './modal-render';
+import { renderModal } from './modal-render';
 
 let activeTab = document.querySelector('.tab--active');
 const allTabs = document.querySelectorAll('.menu__tabs .tab');
 const menuContainer = document.getElementById('menu');
-const activeTabCategory = activeTab.dataset.category;
+const showMoreButton = document.querySelector('.menu__more');
+const mobileVisibleCount = 4;
 
 function isActiveTab(element) {
     return element.classList.contains('tab--active');
@@ -31,6 +32,8 @@ function renderMenuItems(category) {
     menuContainer.innerHTML = '';
 
     const itemsToRender = findByCategory(category);
+
+    menuContainer.classList.toggle('menu__grid--collapsed', itemsToRender.length > mobileVisibleCount);
 
     itemsToRender.map((item, index) => {
 
@@ -78,14 +81,19 @@ function renderMenuItems(category) {
     })
 }
 
-renderMenuItems(activeTabCategory)
+renderMenuItems(activeTab.dataset.category)
+
+showMoreButton.addEventListener('click', () => {
+    menuContainer.classList.remove('menu__grid--collapsed')
+})
 
 menuContainer.addEventListener('click', (ev) => {
     const selected = ev.target.closest('li')
     const selectedId = selected.dataset.id;
-    showModal()
+    showModal(selectedId)
 })
 
-// function showModal(id) {
-//     alert(`${id} is selected`)
-// }
+function showModal(productId) {
+    const productToRender = findByCategory(activeTab.dataset.category)[productId]
+    renderModal(productToRender)
+}

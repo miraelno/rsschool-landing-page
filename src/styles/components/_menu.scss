@@ -1,3 +1,5 @@
+@use '../tokens/breakpoints';
+
 .menu {
   display: flex;
   flex-direction: column;
@@ -28,6 +30,26 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 2.5rem;
+}
+
+.menu__grid--collapsed > li:nth-child(n + 5) {
+  display: none;
+
+  @include breakpoints.tablet-up {
+    display: revert;
+  }
+}
+
+.menu__more {
+  display: none;
+}
+
+.menu__grid--collapsed + .menu__more {
+  display: flex;
+
+  @include breakpoints.tablet-up {
+    display: none;
+  }
 }
 
 .product-card {
