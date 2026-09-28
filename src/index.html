@@ -15,6 +15,7 @@
         })();
     </script>
     <script type="module" src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/slider.js"></script>
     <title>Resource - coffee house</title>
 </head>
 
@@ -218,7 +219,8 @@
             <h2 class="favorite-coffee__title">Choose your <em class="accent">favorite</em> coffee</h2>
             <div class="slider">
                 <div class="slider__row">
-                    <button class="button-icon slider__button" type="button" aria-label="Previous slide">
+                    <button class="button-icon slider__button" id="slider_button_prev" type="button"
+                        aria-label="Previous slide">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             aria-hidden="true">
                             <path d="M18.5 12H6M12 18L6 12L12 6" stroke="currentColor" stroke-linecap="round"
@@ -268,7 +270,8 @@
                             </li>
                         </ul>
                     </div>
-                    <button class="button-icon slider__button" type="button" aria-label="Next slide">
+                    <button class="button-icon slider__button" id="slider_button_next" type="button"
+                        aria-label="Next slide">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             aria-hidden="true">
                             <path d="M6 12H18.5M12.5 18L18.5 12L12.5 6" stroke="currentColor" stroke-linecap="round"
@@ -277,8 +280,7 @@
                     </button>
                 </div>
                 <div class="slider__controls">
-                    <button class="slider__dot slider__dot--active" type="button" aria-label="Slide 1"
-                        aria-current="true"></button>
+                    <button class="slider__dot slider__dot--active" type="button" aria-label="Slide 1"></button>
                     <button class="slider__dot" type="button" aria-label="Slide 2"></button>
                     <button class="slider__dot" type="button" aria-label="Slide 3"></button>
                 </div>
