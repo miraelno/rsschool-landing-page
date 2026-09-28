@@ -27,11 +27,16 @@
 }
 
 .modal__image-box {
+  display: none;
   flex-shrink: 0;
   width: 100%;
   aspect-ratio: 1;
   overflow: hidden;
   border-radius: 2.5rem;
+
+  @include breakpoints.mobile-up {
+    display: block;
+  }
 
   @include breakpoints.tablet-up {
     width: 19.375rem;
