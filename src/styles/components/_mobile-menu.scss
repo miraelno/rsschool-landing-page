@@ -14,7 +14,7 @@
   text-align: center;
 
 
-  @include breakpoints.desktop-up {
+  @include breakpoints.tablet-up {
     display: none;
   }
 }
